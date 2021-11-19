@@ -4,34 +4,34 @@
  */
 
 .heroBanner {
-	padding: 4rem 0;
-	text-align: center;
-	position: relative;
-	overflow: hidden;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .brandImage {
-	height: 100px;
+  height: 100px;
 }
 
 .heroTitle {
-	font-size: 48px;
+  font-size: 48px;
 }
 
 @media screen and (max-width: 564px) {
-	.heroTitle {
-		font-size: 36px;
-	}
+  .heroTitle {
+    font-size: 36px;
+  }
 }
 
 @media screen and (max-width: 966px) {
-	.heroBanner {
-		padding: 2rem;
-	}
+  .heroBanner {
+    padding: 2rem;
+  }
 }
 
 .buttons {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
