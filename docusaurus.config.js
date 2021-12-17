@@ -52,16 +52,21 @@ const config = {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Projects',
           },
           {
             to: '/blog',
-            label: 'Blog',
+            label: 'Articles',
             position: 'left',
           },
           {
             href: 'https://github.com/codeisscience/contributor-site',
             label: 'GitHub',
+            position: 'right',
+          },
+          {
+            href: 'https://join.slack.com/t/codeisscience/shared_invite/zt-10fyo37b6-yBOgCsktGxRtHuMA3Os_9w',
+            label: 'Slack',
             position: 'right',
           },
         ],
