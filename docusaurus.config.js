@@ -65,7 +65,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://join.slack.com/t/codeisscience/shared_invite/zt-10fyo37b6-yBOgCsktGxRtHuMA3Os_9w',
+            href: 'https://join.slack.com/t/codeisscience/shared_invite/zt-16g3i8hr7-6j~jd_6JddhjEUBq9YUkmQ',
             label: 'Slack',
             position: 'right',
           },
@@ -114,7 +114,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Code Is Science, Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,
