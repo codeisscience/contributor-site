@@ -10,6 +10,10 @@ import TabItem from '@theme/TabItem';
 
 ### `getCurrentUser: User` {#getCurrentUser}
 
+<a className='response' href='../otherFolder/doc4.md'>
+  ⮩ User
+</a>
+
 Returns a `User` object containing the data of the user who is currently logged.
 
 <Tabs>
@@ -72,21 +76,15 @@ function helloWorld() {
   </TabItem>
 </Tabs>
 
-### `getAllUsers(currentPageNumber, limitValue!)` {#getAllUsers}
+### `getAllUsers(currentPageNumber, limitValue)` {#getAllUsers}
 
-Returns a paginated user object.
+#### `limitValue` ⟹ Int
 
-Returns an array of all the users who are currently registered in the database with pagination.
+#### `currentPageNumber` ⟹ Int
 
-The following values are needed for the purpose of pagination:
-
-#### `limitValue: Int!`
-
-Number of Users that we want to display in a single page.
-
-#### `currentPageNumber: Int!`
-
-The page number of the page that is currently being displayed on the front-end.
+<a className='response' href='../otherFolder/doc4.md'>
+  ⮩ Paginated User
+</a>
 
 <Tabs>
   <TabItem value='operation' label='Operation' default>
