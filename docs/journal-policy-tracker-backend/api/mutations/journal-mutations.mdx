@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 #### `journalToCreate` ⟹ JournalInput
 
 <a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
+  ⮩ Journal Response
 </a>
 
 <Tabs>
@@ -57,9 +57,25 @@ mutation CreateJournal($journal: JournalInput!) {
 
   <TabItem value='variables' label='Variables' default>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "journal": {
+    "title": "Journal Title",
+    "url": "https://journalurl1234.com",
+    "issn": "23765992",
+    "domainName": "Domain Name",
+    "policies": {
+      "title": "Policy Title",
+      "firstYear": 2010,
+      "lastYear": 9999,
+      "policyType": "NUMBER_TWO",
+      "isDataAvailabilityStatementPublished": false,
+      "isDataShared": false,
+      "isDataPeerReviewed": false,
+      "enforced": "SOMETIMES",
+      "enforcedEvidence": "Enforced Evidnece String"
+    }
+  }
 }
 ```
 
@@ -67,9 +83,34 @@ function helloWorld() {
 
   <TabItem value='response' label='Response'>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "data": {
+    "createJournal": {
+      "journal": {
+        "id": "6310bd599b51eef3ba27fe23",
+        "title": "Journal Title",
+        "url": "https://journalurl1234.com",
+        "issn": "23765992",
+        "domainName": "Domain Name",
+        "createdAt": "1662041433154",
+        "updatedAt": "1662041433154",
+        "createdBy": "6301eab3fb94b55057a9527d",
+        "policies": {
+          "title": "Policy Title",
+          "firstYear": 2010,
+          "lastYear": 9999,
+          "policyType": "NUMBER_TWO",
+          "isDataAvailabilityStatementPublished": false,
+          "isDataShared": false,
+          "isDataPeerReviewed": false,
+          "enforced": "SOMETIMES",
+          "enforcedEvidence": "Enforced Evidnece String"
+        }
+      },
+      "errors": null
+    }
+  }
 }
 ```
 
@@ -85,7 +126,7 @@ function helloWorld() {
 #### `newJournalDetails` ⟹ JournalInput
 
 <a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
+  ⮩ Journal Response
 </a>
 
 <Tabs>
@@ -128,9 +169,26 @@ mutation UpdateJournal($issnToUpdate: String!, $newJournalDetails: JournalInput!
   </TabItem>
   <TabItem value='variables' label='Variables' default>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "issnToUpdate": "13985658",
+  "newJournalDetails": {
+    "title": "Journal Title",
+    "url": "https://journalurl1234.com",
+    "issn": "12345678",
+    "domainName": "Domain Name",
+    "policies": {
+      "title": "Policy Title",
+      "firstYear": 2010,
+      "lastYear": 9999,
+      "policyType": "NUMBER_TWO",
+      "isDataAvailabilityStatementPublished": false,
+      "isDataShared": false,
+      "isDataPeerReviewed": false,
+      "enforced": "SOMETIMES",
+      "enforcedEvidence": "Enforced Evidnece String"
+    }
+  }
 }
 ```
 
@@ -138,9 +196,34 @@ function helloWorld() {
 
   <TabItem value='response' label='Response'>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "data": {
+    "updateJournal": {
+      "journal": {
+        "id": "630c8cbad1dd4047d11e36ae",
+        "title": "Journal Title",
+        "url": "https://journalurl1234.com",
+        "issn": "12345678",
+        "domainName": "Domain Name",
+        "createdAt": "1655582327800",
+        "updatedAt": "1662042015993",
+        "createdBy": "6301eab3fb94b55057a9527d",
+        "policies": {
+          "title": "Policy Title",
+          "firstYear": 2010,
+          "lastYear": 9999,
+          "policyType": "NUMBER_TWO",
+          "isDataAvailabilityStatementPublished": false,
+          "isDataShared": false,
+          "isDataPeerReviewed": false,
+          "enforced": "SOMETIMES",
+          "enforcedEvidence": "Enforced Evidnece String"
+        }
+      },
+      "errors": null
+    }
+  }
 }
 ```
 
@@ -153,9 +236,7 @@ function helloWorld() {
 
 #### `issnToDelete` ⟹ String
 
-<a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
-</a>
+<a className='response'>⮩ Boolean</a>
 
 <Tabs>
   <TabItem value='operation' label='Operation' default>
@@ -198,9 +279,7 @@ mutation DeleteJournal($issnToDelete: String!) {
 
 #### `userId` ⟹ String
 
-<a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
-</a>
+<a className='response'>⮩ Boolean</a>
 
 <Tabs>
   <TabItem value='operation' label='Operation' default>
