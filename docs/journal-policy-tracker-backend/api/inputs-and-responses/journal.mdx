@@ -1,0 +1,60 @@
+---
+title: Journal Inputs and Responses
+sidebar_label: Journal
+sidebar_position: 2
+toc_max_heading_level: 4
+---
+
+### Journal Input
+
+```javascript
+JournalInput: {
+  title: String;
+  url: String;
+  issn: String;
+  domainName: String;
+  policies: PoliciesInput: {
+    title: String;
+    firstYear: Int;
+    lastYear: Int;
+    policyType: enum: {
+      NUMBER_ONE;
+      NUMBER_TWO;
+      NUMBER_THREE;
+      NUMBER_FOUR;
+    }
+    isDataAvailabilityStatementPublished: Boolean;
+    isDataShared: Boolean;
+    isDataPeerReviewed: Boolean;
+    enforced: enum: {
+      YES;
+      NO;
+      SOMETIMES;
+    }
+    enforcedEvidence: String;
+  }
+}
+```
+
+### Journal Response
+
+```javascript
+JournalResponse: {
+  journal: Journal;
+  errors: [
+    {
+      field: String,
+      message: String,
+    },
+  ];
+}
+```
+
+### Paginated Journals
+
+```javascript
+PaginatedJournals: {
+  journals: [Journal];
+  totalJournals: Int;
+}
+```

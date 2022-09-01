@@ -1,0 +1,149 @@
+---
+title: User Queries
+sidebar_label: User Queries
+sidebar_position: 1
+toc_max_heading_level: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### `getCurrentUser: User`
+
+Returns a `User` object containing the data of the user who is currently logged.
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation CreateJournal($journal: JournalInput!) {
+  createJournal(journalToCreate: $journal) {
+    journal {
+      id
+      title
+      url
+      issn
+      domainName
+      createdAt
+      updatedAt
+      createdBy
+
+      policies {
+        title
+        firstYear
+        lastYear
+        policyType
+        isDataAvailabilityStatementPublished
+        isDataShared
+        isDataPeerReviewed
+        enforced
+        enforcedEvidence
+      }
+    }
+
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+</Tabs>
+
+### `getAllUsers(currentPageNumber, limitValue!)`
+
+Returns a paginated user object.
+
+Returns an array of all the users who are currently registered in the database with pagination.
+
+The following values are needed for the purpose of pagination:
+
+#### `limitValue: Int!`
+
+Number of Users that we want to display in a single page.
+
+#### `currentPageNumber: Int!`
+
+The page number of the page that is currently being displayed on the front-end.
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation CreateJournal($journal: JournalInput!) {
+  createJournal(journalToCreate: $journal) {
+    journal {
+      id
+      title
+      url
+      issn
+      domainName
+      createdAt
+      updatedAt
+      createdBy
+
+      policies {
+        title
+        firstYear
+        lastYear
+        policyType
+        isDataAvailabilityStatementPublished
+        isDataShared
+        isDataPeerReviewed
+        enforced
+        enforcedEvidence
+      }
+    }
+
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+</Tabs>

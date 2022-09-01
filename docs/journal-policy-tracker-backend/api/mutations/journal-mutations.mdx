@@ -1,0 +1,237 @@
+---
+title: Journal Mutation
+sidebar_label: Journal Mutation
+sidebar_position: 2
+toc_max_heading_level: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### `createJournal(journalToCreate)`
+
+#### `journalToCreate` ⟹ JournalInput
+
+<a className='response' href='../otherFolder/doc4.md'>
+  ⮩ Paginated Journals
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation CreateJournal($journal: JournalInput!) {
+  createJournal(journalToCreate: $journal) {
+    journal {
+      id
+      title
+      url
+      issn
+      domainName
+      createdAt
+      updatedAt
+      createdBy
+
+      policies {
+        title
+        firstYear
+        lastYear
+        policyType
+        isDataAvailabilityStatementPublished
+        isDataShared
+        isDataPeerReviewed
+        enforced
+        enforcedEvidence
+      }
+    }
+
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `updateJournal(issnToUpdate, newJournalDetails)`
+
+#### `issnToUpdate` ⟹ String
+
+#### `newJournalDetails` ⟹ JournalInput
+
+<a className='response' href='../otherFolder/doc4.md'>
+  ⮩ Paginated Journals
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation UpdateJournal($issnToUpdate: String!, $newJournalDetails: JournalInput!) {
+  updateJournal(issnToUpdate: $issnToUpdate, newJournalDetails: $newJournalDetails) {
+    journal {
+      id
+      title
+      url
+      issn
+      domainName
+      createdAt
+      updatedAt
+      createdBy
+
+      policies {
+        title
+        firstYear
+        lastYear
+        policyType
+        isDataAvailabilityStatementPublished
+        isDataShared
+        isDataPeerReviewed
+        enforced
+        enforcedEvidence
+      }
+    }
+
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value='variables' label='Variables' default>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `deleteJournal(issnToDelete)`
+
+#### `issnToDelete` ⟹ String
+
+<a className='response' href='../otherFolder/doc4.md'>
+  ⮩ Paginated Journals
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation DeleteJournal($issnToDelete: String!) {
+  deleteJournal(issnToDelete: $issnToDelete)
+}
+```
+
+  </TabItem>
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "issnToDelete": "19294164"
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "deleteJournal": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `addMockJournalData(numberOfJournals, userId)`
+
+#### `numberOfJournals` ⟹ Int
+
+#### `userId` ⟹ String
+
+<a className='response' href='../otherFolder/doc4.md'>
+  ⮩ Paginated Journals
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation AddMockJournalData($numberOfJournals: Int!, $userId: String!) {
+  addMockJournalData(numberOfJournals: $numberOfJournals, userId: $userId)
+}
+```
+
+  </TabItem>
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "numberOfJournals": 2,
+  "userId": "630c9245b5cb663f7ba46afb"
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "addMockJournalData": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
