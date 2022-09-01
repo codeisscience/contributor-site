@@ -8,7 +8,7 @@ toc_max_heading_level: 4
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### `getCurrentUser: User` {#getCurrentUser}
+### `getCurrentUser` {#getCurrentUser}
 
 <a className='response' href='../otherFolder/doc4.md'>
   ⮩ User
@@ -20,46 +20,16 @@ Returns a `User` object containing the data of the user who is currently logged.
   <TabItem value='operation' label='Operation' default>
 
 ```graphql
-mutation CreateJournal($journal: JournalInput!) {
-  createJournal(journalToCreate: $journal) {
-    journal {
-      id
-      title
-      url
-      issn
-      domainName
-      createdAt
-      updatedAt
-      createdBy
-
-      policies {
-        title
-        firstYear
-        lastYear
-        policyType
-        isDataAvailabilityStatementPublished
-        isDataShared
-        isDataPeerReviewed
-        enforced
-        enforcedEvidence
-      }
-    }
-
-    errors {
-      field
-      message
-    }
+query GetCurrentUser {
+  getCurrentUser {
+    id
+    fullName
+    username
+    email
+    role
+    createdAt
+    updatedAt
   }
-}
-```
-
-  </TabItem>
-
-  <TabItem value='variables' label='Variables' default>
-
-```js
-function helloWorld() {
-  console.log('Hello, world!');
 }
 ```
 
@@ -67,9 +37,19 @@ function helloWorld() {
 
   <TabItem value='response' label='Response'>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "data": {
+    "getCurrentUser": {
+      "id": "6301eab3fb94b55057a9527d",
+      "fullName": "Devesh K",
+      "username": "dev",
+      "email": "dev1234@dev1234.com",
+      "role": "ADMIN",
+      "createdAt": "1661070003279",
+      "updatedAt": "1661970149983"
+    }
+  }
 }
 ```
 
@@ -90,35 +70,18 @@ function helloWorld() {
   <TabItem value='operation' label='Operation' default>
 
 ```graphql
-mutation CreateJournal($journal: JournalInput!) {
-  createJournal(journalToCreate: $journal) {
-    journal {
+query GetAllUsers($currentPageNumber: Int!, $limitValue: Int!) {
+  getAllUsers(currentPageNumber: $currentPageNumber, limitValue: $limitValue) {
+    users {
       id
-      title
-      url
-      issn
-      domainName
+      fullName
+      username
+      email
+      role
       createdAt
       updatedAt
-      createdBy
-
-      policies {
-        title
-        firstYear
-        lastYear
-        policyType
-        isDataAvailabilityStatementPublished
-        isDataShared
-        isDataPeerReviewed
-        enforced
-        enforcedEvidence
-      }
     }
-
-    errors {
-      field
-      message
-    }
+    totalUsers
   }
 }
 ```
@@ -127,9 +90,10 @@ mutation CreateJournal($journal: JournalInput!) {
 
   <TabItem value='variables' label='Variables' default>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "currentPageNumber": 1,
+  "limitValue": 20
 }
 ```
 
@@ -137,9 +101,51 @@ function helloWorld() {
 
   <TabItem value='response' label='Response'>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "data": {
+    "getAllUsers": {
+      "users": [
+        {
+          "id": "631099369b51eef3ba27fe09",
+          "fullName": "Joanny Boyer",
+          "username": "Izaiah_Wehner39",
+          "email": "lonny_ryan88@hotmail.com",
+          "role": "MODERATOR",
+          "createdAt": "1649116735446",
+          "updatedAt": "1662032182272"
+        },
+        {
+          "id": "631099369b51eef3ba27fe0a",
+          "fullName": "Sister Franecki",
+          "username": "Yolanda.Farrell24",
+          "email": "annabell93@gmail.com",
+          "role": "USER",
+          "createdAt": "1649657242702",
+          "updatedAt": "1662032182272"
+        },
+        {
+          "id": "631099369b51eef3ba27fe0b",
+          "fullName": "Eve Von",
+          "username": "Hosea.Gottlieb45",
+          "email": "marina0@gmail.com",
+          "role": "MODERATOR",
+          "createdAt": "1646894956159",
+          "updatedAt": "1662032182272"
+        },
+        {
+          "id": "631099369b51eef3ba27fe0c",
+          "fullName": "Savion Bruen",
+          "username": "Donna_Mosciski22",
+          "email": "alfreda_fahey@yahoo.com",
+          "role": "USER",
+          "createdAt": "1640060294295",
+          "updatedAt": "1662032182272"
+        }
+      ],
+      "totalUsers": 4
+    }
+  }
 }
 ```
 
