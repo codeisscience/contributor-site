@@ -30,4 +30,5 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 .response {
   font-size: 1.3rem;
   font-weight: bold;
+  margin: 1rem;
 }
