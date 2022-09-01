@@ -10,43 +10,27 @@ import TabItem from '@theme/TabItem';
 
 ### `register(userInfo)` {#register}
 
-Register mutation adds a new user to the database.
-
 #### `userInfo` ⟹ RegisterInput
 
 <a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
+  ⮩ User Response
 </a>
 
 <Tabs>
   <TabItem value='operation' label='Operation' default>
 
 ```graphql
-mutation CreateJournal($journal: JournalInput!) {
-  createJournal(journalToCreate: $journal) {
-    journal {
+mutation Register($userInfo: RegisterInput!) {
+  register(userInfo: $userInfo) {
+    user {
       id
-      title
-      url
-      issn
-      domainName
+      fullName
+      username
+      email
+      role
       createdAt
       updatedAt
-      createdBy
-
-      policies {
-        title
-        firstYear
-        lastYear
-        policyType
-        isDataAvailabilityStatementPublished
-        isDataShared
-        isDataPeerReviewed
-        enforced
-        enforcedEvidence
-      }
     }
-
     errors {
       field
       message
@@ -59,9 +43,14 @@ mutation CreateJournal($journal: JournalInput!) {
 
   <TabItem value='variables' label='Variables' default>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "userInfo": {
+    "fullName": "Devesh K",
+    "email": "dev1234@dev1234.com",
+    "username": "dev",
+    "password": "myp4s$$w0rd"
+  }
 }
 ```
 
@@ -69,56 +58,53 @@ function helloWorld() {
 
   <TabItem value='response' label='Response'>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "data": {
+    "register": {
+      "user": {
+        "id": "6310a1ec9b51eef3ba27fe18",
+        "fullName": "Devesh K",
+        "username": "dev",
+        "email": "dev1234@dev1234.com",
+        "role": "USER",
+        "createdAt": "1662034412416",
+        "updatedAt": "1662034412416"
+      },
+      "errors": null
+    }
+  }
 }
 ```
 
   </TabItem>
 </Tabs>
+
+---
 
 ### `login(userInfo)` {#login}
 
-Login mutation will allows users to log in to the website.
-
 #### `userInfo` ⟹ LoginInput
 
-The user needs to enter the usernameOrEmail in one field and the password in another
-
 <a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
+  ⮩ User Response
 </a>
 
 <Tabs>
   <TabItem value='operation' label='Operation' default>
 
 ```graphql
-mutation CreateJournal($journal: JournalInput!) {
-  createJournal(journalToCreate: $journal) {
-    journal {
+mutation Login($userInfo: LoginInput!) {
+  login(userInfo: $userInfo) {
+    user {
       id
-      title
-      url
-      issn
-      domainName
+      fullName
+      username
+      email
+      role
       createdAt
       updatedAt
-      createdBy
-
-      policies {
-        title
-        firstYear
-        lastYear
-        policyType
-        isDataAvailabilityStatementPublished
-        isDataShared
-        isDataPeerReviewed
-        enforced
-        enforcedEvidence
-      }
     }
-
     errors {
       field
       message
@@ -131,9 +117,12 @@ mutation CreateJournal($journal: JournalInput!) {
 
   <TabItem value='variables' label='Variables' default>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "userInfo": {
+    "usernameOrEmail": "dev",
+    "password": "myp4s$$w0rd"
+  }
 }
 ```
 
@@ -141,25 +130,96 @@ function helloWorld() {
 
   <TabItem value='response' label='Response'>
 
-```js
-function helloWorld() {
-  console.log('Hello, world!');
+```json
+{
+  "data": {
+    "login": {
+      "user": {
+        "id": "6310a1ec9b51eef3ba27fe18",
+        "fullName": "Devesh K",
+        "username": "dev",
+        "email": "dev1234@dev1234.com",
+        "role": "USER",
+        "createdAt": "1662034412416",
+        "updatedAt": "1662034412416"
+      },
+      "errors": null
+    }
+  }
 }
 ```
 
   </TabItem>
 </Tabs>
 
+---
+
 ### `logout` {#logout}
 
-<a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
-</a>
+<a className='response'>⮩ Boolean</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation Logout {
+  logout
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "logout": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
 
 ### `addMockUserData(numberOfUsers)` {#addMockUserData}
 
 #### `numberOfUsers` ⟹ Int
 
-<a className='response' href='../otherFolder/doc4.md'>
-  ⮩ Paginated Journals
-</a>
+<a className='response'>⮩ Boolean</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation AddMockUserData($numberOfUsers: Int!) {
+  addMockUserData(numberOfUsers: $numberOfUsers)
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "numberOfUsers": 10
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "addMockUserData": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
