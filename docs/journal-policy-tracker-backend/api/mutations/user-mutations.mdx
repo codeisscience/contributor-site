@@ -1,0 +1,225 @@
+---
+title: 'User Mutation'
+sidebar_label: User Mutation
+sidebar_position: 1
+toc_max_heading_level: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### `register(userInfo)` {#register}
+
+#### `userInfo` ⟹ [Register Input](../inputs-and-responses/user#registerInput)
+
+<a className='response' href='../inputs-and-responses/user#userResponse'>
+  ⮩ User Response
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation Register($userInfo: RegisterInput!) {
+  register(userInfo: $userInfo) {
+    user {
+      id
+      fullName
+      username
+      email
+      role
+      createdAt
+      updatedAt
+    }
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "userInfo": {
+    "fullName": "Devesh K",
+    "email": "dev1234@dev1234.com",
+    "username": "dev",
+    "password": "myp4s$$w0rd"
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "register": {
+      "user": {
+        "id": "6310a1ec9b51eef3ba27fe18",
+        "fullName": "Devesh K",
+        "username": "dev",
+        "email": "dev1234@dev1234.com",
+        "role": "USER",
+        "createdAt": "1662034412416",
+        "updatedAt": "1662034412416"
+      },
+      "errors": null
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `login(userInfo)` {#login}
+
+#### `userInfo` ⟹ [Login Input](../inputs-and-responses/user#loginInput)
+
+<a className='response' href='../inputs-and-responses/user#userResponse'>
+  ⮩ User Response
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation Login($userInfo: LoginInput!) {
+  login(userInfo: $userInfo) {
+    user {
+      id
+      fullName
+      username
+      email
+      role
+      createdAt
+      updatedAt
+    }
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "userInfo": {
+    "usernameOrEmail": "dev",
+    "password": "myp4s$$w0rd"
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "login": {
+      "user": {
+        "id": "6310a1ec9b51eef3ba27fe18",
+        "fullName": "Devesh K",
+        "username": "dev",
+        "email": "dev1234@dev1234.com",
+        "role": "USER",
+        "createdAt": "1662034412416",
+        "updatedAt": "1662034412416"
+      },
+      "errors": null
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `logout` {#logout}
+
+<a className='response'>⮩ Boolean</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation Logout {
+  logout
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "logout": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `addMockUserData(numberOfUsers)` {#addMockUserData}
+
+#### `numberOfUsers` ⟹ Int
+
+<a className='response'>⮩ Boolean</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation AddMockUserData($numberOfUsers: Int!) {
+  addMockUserData(numberOfUsers: $numberOfUsers)
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "numberOfUsers": 10
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "addMockUserData": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>

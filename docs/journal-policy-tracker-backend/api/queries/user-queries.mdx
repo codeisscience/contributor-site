@@ -1,0 +1,154 @@
+---
+title: User Queries
+sidebar_label: User Queries
+sidebar_position: 1
+toc_max_heading_level: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### `getCurrentUser` {#getCurrentUser}
+
+<a className='response' href='../schema/user-schema#userSchema'>
+  ⮩ User
+</a>
+
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+query GetCurrentUser {
+  getCurrentUser {
+    id
+    fullName
+    username
+    email
+    role
+    createdAt
+    updatedAt
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "getCurrentUser": {
+      "id": "6301eab3fb94b55057a9527d",
+      "fullName": "Devesh K",
+      "username": "dev",
+      "email": "dev1234@dev1234.com",
+      "role": "ADMIN",
+      "createdAt": "1661070003279",
+      "updatedAt": "1661970149983"
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `getAllUsers(currentPageNumber, limitValue)` {#getAllUsers}
+
+#### `limitValue` ⟹ Int
+
+#### `currentPageNumber` ⟹ Int
+
+<a className='response' href='../inputs-and-responses/user#paginatedUser'>
+  ⮩ Paginated User
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+query GetAllUsers($currentPageNumber: Int!, $limitValue: Int!) {
+  getAllUsers(currentPageNumber: $currentPageNumber, limitValue: $limitValue) {
+    users {
+      id
+      fullName
+      username
+      email
+      role
+      createdAt
+      updatedAt
+    }
+    totalUsers
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "currentPageNumber": 1,
+  "limitValue": 20
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "getAllUsers": {
+      "users": [
+        {
+          "id": "631099369b51eef3ba27fe09",
+          "fullName": "Joanny Boyer",
+          "username": "Izaiah_Wehner39",
+          "email": "lonny_ryan88@hotmail.com",
+          "role": "MODERATOR",
+          "createdAt": "1649116735446",
+          "updatedAt": "1662032182272"
+        },
+        {
+          "id": "631099369b51eef3ba27fe0a",
+          "fullName": "Sister Franecki",
+          "username": "Yolanda.Farrell24",
+          "email": "annabell93@gmail.com",
+          "role": "USER",
+          "createdAt": "1649657242702",
+          "updatedAt": "1662032182272"
+        },
+        {
+          "id": "631099369b51eef3ba27fe0b",
+          "fullName": "Eve Von",
+          "username": "Hosea.Gottlieb45",
+          "email": "marina0@gmail.com",
+          "role": "MODERATOR",
+          "createdAt": "1646894956159",
+          "updatedAt": "1662032182272"
+        },
+        {
+          "id": "631099369b51eef3ba27fe0c",
+          "fullName": "Savion Bruen",
+          "username": "Donna_Mosciski22",
+          "email": "alfreda_fahey@yahoo.com",
+          "role": "USER",
+          "createdAt": "1640060294295",
+          "updatedAt": "1662032182272"
+        }
+      ],
+      "totalUsers": 4
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>

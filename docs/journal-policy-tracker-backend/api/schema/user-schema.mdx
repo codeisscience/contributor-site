@@ -1,0 +1,24 @@
+---
+title: User Schema
+sidebar_label: User Schema
+sidebar_position: 2
+toc_max_heading_level: 4
+---
+
+## User Schema {#userSchema}
+
+```javascript
+User: {
+  id: ID;
+  fullName: String;
+  username: String;
+  email: String;
+  role: enum: {
+    ADMIN: 'ADMIN';
+    MODERATOR: 'MODERATOR';
+    USER: 'USER';
+  }
+  createdAt: String;
+  updatedAt: String;
+}
+```

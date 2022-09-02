@@ -1,0 +1,41 @@
+---
+title: Journal Schema
+sidebar_label: Journal Schema
+sidebar_position: 2
+toc_max_heading_level: 4
+---
+
+## Journal Schema {#journalSchema}
+
+```javascript
+Journal: {
+  id: ID;
+  title: String;
+  url: String;
+  issn: String;
+  domainName: String;
+  policies: {
+    title: String;
+    firstYear: Int;
+    lastYear: Int;
+    policyType: enum: {
+      NUMBER_ONE: 'Number One';
+      NUMBER_TWO: 'Number Two';
+      NUMBER_THREE: 'Number Three';
+      NUMBER_FOUR: 'Number Four';
+    }
+    isDataAvailabilityStatementPublished: Boolean;
+    isDataShared: Boolean;
+    isDataPeerReviewed: Boolean;
+    enforced: enum: {
+      YES: 'Yes - Before Publication';
+      SOMETIMES: 'Sometimes - Post-Publication Audit';
+      NO: 'No - Not Enforced';
+    }
+    enforcedEvidence: String;
+  }
+  createdAt: String;
+  updatedAt: String;
+  createdBy: ID;
+}
+```

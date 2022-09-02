@@ -1,0 +1,49 @@
+---
+title: User Inputs and Responses
+sidebar_label: User
+sidebar_position: 1
+toc_max_heading_level: 4
+---
+
+### Register Input {#registerInput}
+
+```javascript
+RegisterInput: {
+  fullName: String;
+  username: String;
+  email: String;
+  password: String;
+}
+```
+
+### Login Input {#loginInput}
+
+```javascript
+LoginInput: {
+  usernameOrEmail: String;
+  password: String;
+}
+```
+
+### User Response {#userResponse}
+
+```javascript
+UserResponse: {
+  user: User;
+  errors: [
+    {
+      field: String,
+      message: String,
+    },
+  ];
+}
+```
+
+### Paginated User {#paginatedUser}
+
+```javascript
+PaginatedUser: {
+  users: [User];
+  totalUsers: Int;
+}
+```

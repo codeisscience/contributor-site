@@ -1,0 +1,316 @@
+---
+title: Journal Mutation
+sidebar_label: Journal Mutation
+sidebar_position: 2
+toc_max_heading_level: 4
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+### `createJournal(journalToCreate)` {#createJournal}
+
+#### `journalToCreate` ⟹ [Journal Input](../inputs-and-responses/journal#journalInput)
+
+<a className='response' href='../inputs-and-responses/journal#journalResponse'>
+  ⮩ Journal Response
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation CreateJournal($journal: JournalInput!) {
+  createJournal(journalToCreate: $journal) {
+    journal {
+      id
+      title
+      url
+      issn
+      domainName
+      createdAt
+      updatedAt
+      createdBy
+
+      policies {
+        title
+        firstYear
+        lastYear
+        policyType
+        isDataAvailabilityStatementPublished
+        isDataShared
+        isDataPeerReviewed
+        enforced
+        enforcedEvidence
+      }
+    }
+
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "journal": {
+    "title": "Journal Title",
+    "url": "https://journalurl1234.com",
+    "issn": "23765992",
+    "domainName": "Domain Name",
+    "policies": {
+      "title": "Policy Title",
+      "firstYear": 2010,
+      "lastYear": 9999,
+      "policyType": "NUMBER_TWO",
+      "isDataAvailabilityStatementPublished": false,
+      "isDataShared": false,
+      "isDataPeerReviewed": false,
+      "enforced": "SOMETIMES",
+      "enforcedEvidence": "Enforced Evidnece String"
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "createJournal": {
+      "journal": {
+        "id": "6310bd599b51eef3ba27fe23",
+        "title": "Journal Title",
+        "url": "https://journalurl1234.com",
+        "issn": "23765992",
+        "domainName": "Domain Name",
+        "createdAt": "1662041433154",
+        "updatedAt": "1662041433154",
+        "createdBy": "6301eab3fb94b55057a9527d",
+        "policies": {
+          "title": "Policy Title",
+          "firstYear": 2010,
+          "lastYear": 9999,
+          "policyType": "NUMBER_TWO",
+          "isDataAvailabilityStatementPublished": false,
+          "isDataShared": false,
+          "isDataPeerReviewed": false,
+          "enforced": "SOMETIMES",
+          "enforcedEvidence": "Enforced Evidnece String"
+        }
+      },
+      "errors": null
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `updateJournal(issnToUpdate, newJournalDetails)` {#updateJournal}
+
+#### `issnToUpdate` ⟹ String
+
+#### `newJournalDetails` ⟹ [Journal Input](../inputs-and-responses/journal#journalInput)
+
+<a className='response' href='../inputs-and-responses/journal#journalResponse'>
+  ⮩ Journal Response
+</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation UpdateJournal($issnToUpdate: String!, $newJournalDetails: JournalInput!) {
+  updateJournal(issnToUpdate: $issnToUpdate, newJournalDetails: $newJournalDetails) {
+    journal {
+      id
+      title
+      url
+      issn
+      domainName
+      createdAt
+      updatedAt
+      createdBy
+
+      policies {
+        title
+        firstYear
+        lastYear
+        policyType
+        isDataAvailabilityStatementPublished
+        isDataShared
+        isDataPeerReviewed
+        enforced
+        enforcedEvidence
+      }
+    }
+
+    errors {
+      field
+      message
+    }
+  }
+}
+```
+
+  </TabItem>
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "issnToUpdate": "13985658",
+  "newJournalDetails": {
+    "title": "Journal Title",
+    "url": "https://journalurl1234.com",
+    "issn": "12345678",
+    "domainName": "Domain Name",
+    "policies": {
+      "title": "Policy Title",
+      "firstYear": 2010,
+      "lastYear": 9999,
+      "policyType": "NUMBER_TWO",
+      "isDataAvailabilityStatementPublished": false,
+      "isDataShared": false,
+      "isDataPeerReviewed": false,
+      "enforced": "SOMETIMES",
+      "enforcedEvidence": "Enforced Evidnece String"
+    }
+  }
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "updateJournal": {
+      "journal": {
+        "id": "630c8cbad1dd4047d11e36ae",
+        "title": "Journal Title",
+        "url": "https://journalurl1234.com",
+        "issn": "12345678",
+        "domainName": "Domain Name",
+        "createdAt": "1655582327800",
+        "updatedAt": "1662042015993",
+        "createdBy": "6301eab3fb94b55057a9527d",
+        "policies": {
+          "title": "Policy Title",
+          "firstYear": 2010,
+          "lastYear": 9999,
+          "policyType": "NUMBER_TWO",
+          "isDataAvailabilityStatementPublished": false,
+          "isDataShared": false,
+          "isDataPeerReviewed": false,
+          "enforced": "SOMETIMES",
+          "enforcedEvidence": "Enforced Evidnece String"
+        }
+      },
+      "errors": null
+    }
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `deleteJournal(issnToDelete)` {#deleteJournal}
+
+#### `issnToDelete` ⟹ String
+
+<a className='response'>⮩ Boolean</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation DeleteJournal($issnToDelete: String!) {
+  deleteJournal(issnToDelete: $issnToDelete)
+}
+```
+
+  </TabItem>
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "issnToDelete": "19294164"
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "deleteJournal": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
+
+---
+
+### `addMockJournalData(numberOfJournals, userId)` {#addMockJournalData}
+
+#### `numberOfJournals` ⟹ Int
+
+#### `userId` ⟹ String
+
+<a className='response'>⮩ Boolean</a>
+
+<Tabs>
+  <TabItem value='operation' label='Operation' default>
+
+```graphql
+mutation AddMockJournalData($numberOfJournals: Int!, $userId: String!) {
+  addMockJournalData(numberOfJournals: $numberOfJournals, userId: $userId)
+}
+```
+
+  </TabItem>
+  <TabItem value='variables' label='Variables' default>
+
+```json
+{
+  "numberOfJournals": 2,
+  "userId": "630c9245b5cb663f7ba46afb"
+}
+```
+
+  </TabItem>
+
+  <TabItem value='response' label='Response'>
+
+```json
+{
+  "data": {
+    "addMockJournalData": true
+  }
+}
+```
+
+  </TabItem>
+</Tabs>
