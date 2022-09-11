@@ -16,7 +16,7 @@ As a part of Google Summer of Code 2022, I got an opportunity to work on Journal
 
 ### How the project is supposed to work
 
-The project should have auth components to log in/register a user, and then the particular user can add journal policies stored in a database. The user should also be able to edit and delete a specific journal they created at any time. The project should also have a page displaying all journals and a separate component to display an individual journal. 
+The project should have auth components to log in/register a user, and then the particular user can add journal policies stored in a database. The user should also be able to edit and delete a specific journal they created at any time. The project should also have a page displaying all journals and a separate component to display an individual journal.
 Particularly for the auth component, there should be a method to verify the user and prevent spam. Along with this, there should be a component to display user roles- if a user logged in is an admin or not.
 
 ### Tech Stacks Used 
@@ -82,19 +82,20 @@ Then, I removed components built with react-bootstrap and converted them to just
 The next week was spent building the auth components, that consisted of signup and a login pages with all the validation checks!
 
 Sign Up:
-<img width="1422" alt="signup" src="https://user-images.githubusercontent.com/75530516/189544628-a65c22fc-650b-44ef-881e-afd87c1dfda7.png">
+![Sign Up](https://user-images.githubusercontent.com/75530516/189544628-a65c22fc-650b-44ef-881e-afd87c1dfda7.png)
 
 Log In:
-<img width="1425" alt="login" src="https://user-images.githubusercontent.com/75530516/189544634-7a1f57ff-4ec8-4e96-8f5a-dfac3e02caff.png">
+![Log In](https://user-images.githubusercontent.com/75530516/189544634-7a1f57ff-4ec8-4e96-8f5a-dfac3e02caff.png)
 
-#### JSON server and the Journal List component, migrating to Yarn.
+#### JSON server and the Journal List component, migrating Yarn.
 
 I then built a component to display the entire list of journals stored in the database. I also used a JSON server for the mock backend that stored the dummy data. Previously, we used NPM as the package manager, but I suggested shifting to Yarn since the backend had used Yarn, and it has quite some reputation for being a better package manager.
-<img width="1414" alt="journals" src="https://user-images.githubusercontent.com/75530516/189544665-369654c1-dc1c-4574-b051-9ca9c7bab710.png">
+![Journal List](https://user-images.githubusercontent.com/75530516/189544665-369654c1-dc1c-4574-b051-9ca9c7bab710.png)
 
 #### Policy details component
 
 Next, I worked on making a component that could fetch and display all the policy details when clicking on a particular journal. This involved researching the various policies that come with open source scientific journals. We currently have eight fields.
+
 1. First Year
 2. Policy Title
 3. Policy Type
@@ -102,13 +103,13 @@ Next, I worked on making a component that could fetch and display all the policy
 5. Data Availability Statement Published
 6. Data Peer Reviewed
 7. Data Shared
-5. Enforced Evidence
-<img width="1424" alt="details" src="https://user-images.githubusercontent.com/75530516/189544671-f76c6b4d-c5aa-4a4d-adc6-8d30757d800f.png">
+8. Enforced Evidence
+![Details](https://user-images.githubusercontent.com/75530516/189544671-f76c6b4d-c5aa-4a4d-adc6-8d30757d800f.png)
 
 #### Add Journal Component
 
 Developed a component to help users add a journal and its policies to the database.
-<img width="1424" alt="addjournal" src="https://user-images.githubusercontent.com/75530516/189544851-b5a5254b-2b46-4d4d-bc49-97e16c629427.png">
+![Add Journal](https://user-images.githubusercontent.com/75530516/189544851-b5a5254b-2b46-4d4d-bc49-97e16c629427.png)
 
 #### Crud operations, searbar
 
@@ -193,16 +194,15 @@ The entire process took quite some time and was quite challenging, but I complet
 #### User profile and log out component
 
 Created a component to display the user logged in and a button to log out and delete the cookie.
-<img width="1137" alt="profile" src="https://user-images.githubusercontent.com/75530516/189545003-51274293-68f7-4dde-8fc8-20a6657c7eb9.png">
+![User Profile](https://user-images.githubusercontent.com/75530516/189545003-51274293-68f7-4dde-8fc8-20a6657c7eb9.png)
 
 PRs:
-
- 11. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/189
- 12. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/190
- 13. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/191
- 14. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/192
- 15. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/193
- 16. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/194
+1. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/189
+2. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/190
+3. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/191
+4. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/192
+5. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/193
+6. https://github.com/codeisscience/journal-policy-tracker-frontend/pull/194
 
 ## The next steps:
 
