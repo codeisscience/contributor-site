@@ -32,12 +32,13 @@ For the frontend library, we decided to go with React.js because of its flexibil
 | Graphql Client                                        | Apollo Client                      |
 | Testing                                          | Cypress                         |
 | State-management | useReducer |
+| Repository | https://github.com/codeisscience/journal-policy-tracker-frontend/tree/gsoc22 |
 
 ## Community Bonding 🫶🏽
 
 ### Mentors & Co-Mentee 
 
-I can't thank my project mentors, Yo Yahudi and Isaac Miti, who helped me navigate through these three months. They were understandable throughout the period, given that I was a full-time university student during my term.
+I can't thank my project mentors, Yo Yehudi and Isaac Miti, who helped me navigate through these three months. They were understandable throughout the period, given that I was a full-time university student during my term.
 
 Apart from this, I could also like to thank my co-mentee, Devesh, who helped me a lot, especially during the backend integration, since this was my first time working with a GraphQL backend, and I had a lot of surprises on the way 👀.
 
